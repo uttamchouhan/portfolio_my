@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="port.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>Uttam-Chouhan-My-Portfolio</title>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>Uttam.<sup>Portfolio</sup></h1>
+                </div>
+                <ul id="menuBar">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-me">About-Me</a></li>
+                    <li><a href="#contact">Contact-Us</a></li>
+                    <i class="fas fa-times" onclick="closeBar()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openBar()"></i>
+            </nav>
+            <div class="text-container" id="home">
+                <p>WEB-Development</p>
+                <h1>Hi i am Uttam Chouhan From India</h1>
+
+                <div class="follow-me">
+                    <p>Follow-Me-On</p>
+                    <div class="link">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-me" id="about-me">
+        <div class="container">
+            <div class="row">
+                <div class="content-col-1">
+                    <img src="./img/skills.jpg" alt="">
+                </div>
+                <div class="content-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos accusantium sint fugiat sapiente aliquam quas et provident blanditiis perferendis, necessitatibus, dolor saepe asperiores molestiae reiciendis veritatis dolores
+                        quam facilis laborum.</p>
+
+                    <div class="about-title">
+                        <p class="about-links active-links" onclick="opentab('skills')">Skills</p>
+                        <p class="about-links" onclick="opentab('projects')">Projects</p>
+                        <p class="about-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="about-contents active-about" id="skills">
+                        <ul>
+                            <li><span>UI / UX Design</span><br>Designing Web & App Interfaces</li>
+                            <li><span>Web Development</span><br>Using HTML, CSS, BOOTSTRAPE & JAVASCRIPT</li>
+                            <li><span>Web Development Framework</span><br>Using React.js</li>
+                            <li><span>Version Controler</span><br>Using GitHub & Git</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-contents" id="projects">
+                        <ul>
+                            <li><span>E-Commerce</span><br>Coming Soon</li>
+                            <li><span>My-Portfolio</span><br>Coming Soon</li>
+                            <li><span>Code chef achievement</span><br>
+                                <a href="https://www.codechef.com/users/cuttam9892">
+                                    codechefLink</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="about-contents" id="education">
+                        <ul>
+                            <li><span>2021</span><br>12th Completed From Abhinav Vidya Mandier From Mumbai</li>
+                            <li><span>2022</span><br>FYBCA Completed From Hinduja College From Mumbai</li>
+                            <li><span>2023</span><br>SYBCA Completed From Hindjua College From Mumbai</li>
+                            <li><span>2024</span><br>TYBCA at Present From Hindjua College From Mumbai</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> uttamchouhan9896@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 8454851872</p>
+                    <a href="./img/Resume.pdf" download class="btn btn-2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Meassage"></textarea>
+                        <button type="submit" class="btn btn-2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p><span>&copy;</span>2023 create by Uttam chouhan</p>
+        </div>
+    </div>
+
+    <script>
+        var aboutlinks = document.getElementsByClassName("about-links");
+        var aboutcontents = document.getElementsByClassName("about-contents");
+
+        function opentab(tabname) {
+            for (aboutlink of aboutlinks) {
+                aboutlink.classList.remove("active-links");
+            }
+            for (aboutcontent of aboutcontents) {
+                aboutcontent.classList.remove("active-about");
+            }
+            event.currentTarget.classList.add("active-links");
+            document.getElementById(tabname).classList.add("active-about");
+        }
+    </script>
+
+    <script>
+        var menuBar = document.getElementById("menuBar");
+
+        function openBar() {
+            menuBar.style.right = "0";
+        }
+
+        function closeBar() {
+            menuBar.style.right = "-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyuPh5-0-HFME61vZZXBf8bmjYTH-y-48oimKxeAy9uOrixcj9_Jan2OExOf9N39c7qRw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => {
+                    msg.innerHTML = "Message Sent Successfully"
+                    setTimeout(function() {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
